@@ -11,6 +11,4 @@ This Dataiku DSS plugin provides a recipe that performs a batch XSLT transformat
 
 ## License
 ---
-This plugin is distributed under the Apache License version 2.0
-
----
+This plugin is distributed under the Apache License version 2.0.
