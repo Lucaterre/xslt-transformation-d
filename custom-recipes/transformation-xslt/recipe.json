@@ -1,0 +1,99 @@
+{
+    "meta": {
+        "label": "XSLT transformation",
+        "description": "Batch XSLT transformation and schema validation.",
+        "icon": "icon-code"
+    },
+    "kind": "PYTHON",
+    "inputRoles": [
+		
+		{
+            "name": "xml_origin_folder",
+            "label": "Input XML files (folder)",
+            "description": "Folder that contains XML files for apply transformation.",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": false,
+			"acceptsManagedFolder": true
+        },
+		{
+            "name": "xslt_origin_folder",
+            "label": "Input XSLT stylesheet (folder)",
+            "description": "Folder that contains XSLT stylesheet use to transform. XSLT template should be in version 1.0.",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": false,
+			"acceptsManagedFolder": true
+        },
+        {
+            "name": "validation_folder",
+            "label": "Input validation schema (folder - optionnal)",
+            "description": "Folder that contains validation schema (RelaxNG, DTD).",
+            "arity": "UNARY",
+            "required": false,
+            "acceptsDataset": false,
+			"acceptsManagedFolder": true
+        }
+    ],
+    "outputRoles": [
+        {
+            "name": "xslt_output_folder",
+            "label": "Output XML files (folder)",
+            "description": "Folder where output XML files are stored.",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": false,
+			"acceptsManagedFolder": true
+        }
+
+    ],
+    "params": [
+        {
+            "name": "prefix",
+            "label": "Prefix for output XML files",
+            "type": "STRING",
+            "description" : "Indicate a prefix for output xml files (default to 'new_').",
+            "mandatory": true
+        },
+		 {
+            "name": "separator_parameters",
+            "label": "XSLT Parameters inputs (optionnal)",
+            "type": "SEPARATOR",
+			 "description": "<b>Choose the parameters embedded in your XSLT.</b>"
+        },
+        {
+            "name": "date_param",
+            "label": "Add date",
+            "type": "BOOLEAN",
+            "description" : "Only use this option if <xsl:param name='datenow'/> is set in XSLT.",
+            "mandatory": false
+        },
+		{
+            "name": "filename_param",
+            "label": "Add filename",
+            "type": "BOOLEAN",
+            "description" : "Only use this option if <xsl:param name='filename'/> is set in XSLT.",
+            "mandatory": false
+        },
+        {
+            "name": "custom_param",
+            "label": "Custom parameters",
+            "description" : "Custom parameters set in XSLT template with statics values.",
+            "type": "MAP",
+            "mandatory": false
+        },
+		{
+            "name": "separator_validation",
+            "label": "Validation specifications (optionnal)",
+            "description" : "Show the output logs at the end of process.",
+            "type": "SEPARATOR"
+        },
+		{
+            "name": "use_validation",
+            "label": "Perform schema validation against XML output files.",
+            "type": "BOOLEAN",
+            "mandatory": false
+        }
+    ],
+    "resourceKeys": []
+}

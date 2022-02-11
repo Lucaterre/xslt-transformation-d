@@ -1,0 +1,16 @@
+{
+    "id": "xslt-dss-plugin",
+    "version": "0.0.1",
+    "meta": {
+        "label": "XSLT transformation",
+        "description": "This plugin provides a recipe that performs a batch XSLT transformation and, optionally, a XML schema validation output.",
+        "author": "Lucas Terriel (INRIA - ALMAnaCH team)",
+        "icon": "icon-code",
+        "tags": [
+            "XSLT",
+            "XML",
+            "Data preparation"
+        ],
+        "licenseInfo": "Apache Software License"
+    }
+}
